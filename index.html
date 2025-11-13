@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorota</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="login-screen" class="screen active">
+            <h1>Lorota - adivinha quem tá mentindo</h1>
+            <form id="login-form">
+                <label for="username">Seu nome:</label>
+                <input type="text" id="username" pattern="[a-zA-Z0-9]+" 
+                       title="Apenas letras e números." required>
+                <button type="submit">Entrar</button>
+            </form>
+            
+            <h3>Jogadores na Sala:</h3>
+            <table id="user-table">
+                <thead>
+                    <tr><th>Nome</th></tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+            
+            <button id="start-game-btn" class="hidden">Iniciar Jogo</button>
+        </div>
+
+        <div id="submission-screen" class="screen">
+            <div class="header">
+                <h2 id="round-title">Rodada X/10</h2>
+                <div id="scoreboard-sub" class="scoreboard"></div>
+            </div>
+            <h3>A palavra é:</h3>
+            <h1 id="current-word"></h1>
+            <p>Escreva um significado falso (mas convincente!) para esta palavra.</p>
+            <form id="submission-form">
+                <textarea id="definition-input" rows="3" pattern="[a-zA-Z0-9 ]+" 
+                          title="Apenas letras e números." required></textarea>
+                <button type="submit">Submeter Lorota</button>
+            </form>
+            <div id="wait-submission" class="waiting-area">
+                <p>Aguardando outros jogadores submeterem...</p>
+                <ul id="submission-status-list"></ul>
+            </div>
+        </div>
+
+        <div id="voting-screen" class="screen">
+            <div class="header">
+                <h2 id="round-title-vote">Rodada X/10</h2>
+                <div id="scoreboard-vote" class="scoreboard"></div>
+            </div>
+            <h3>Qual é o significado real de <span id="current-word-vote"></span>?</h3>
+            <form id="voting-form">
+                <div id="options-container">
+                    </div>
+                <button type="submit">Revelar!</button>
+            </form>
+            <div id="wait-voting" class="waiting-area">
+                <p>Aguardando outros jogadores votarem...</p>
+                <ul id="voting-status-list"></ul>
+            </div>
+        </div>
+
+        <div id="reveal-screen" class="screen">
+            <h3>Resultado da Rodada <span id="round-title-reveal"></span></h3>
+            <h2 id="reveal-word"></h2>
+            <p><strong>O significado correto era:</strong></p>
+            <p id="correct-definition" class="correct-answer"></p>
+            
+            <div id="reveal-results">
+                </div>
+
+            <h4>Pontuação Total</h4>
+            <div id="scoreboard-reveal" class="scoreboard-final"></div>
+            
+            <button id="next-round-btn">Próxima Rodada</button>
+        </div>
+
+        <div id="end-game-screen" class="screen">
+            <h2>Fim de Jogo!</h2>
+            <h3 id="winner-text"></h3>
+            <h4>Pontuação Final:</h4>
+            <div id="scoreboard-final" class="scoreboard-final"></div>
+            <button id="reset-game-btn">Jogar Novamente</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
