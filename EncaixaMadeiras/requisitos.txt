@@ -1,0 +1,61 @@
+# language: pt
+Funcionalidade: Jogo de Encaixe de Peças de Madeira
+  Como um jogador
+  Eu quero arrastar peças de madeira de formatos variados para um tabuleiro
+  Para resolver o quebra-cabeça encaixando todas as peças sem sobreposição
+
+  Contexto:
+    Dado que o jogo foi carregado no navegador
+    E que existe um tabuleiro vazio de 12 colunas por 5 linhas
+    E que existem 11 peças de madeira listadas na área de "Peças Disponíveis"
+
+  Cenário: Iniciar o jogo
+    Quando eu acesso a página do jogo
+    Então devo ver todas as peças desenhadas no lado esquerdo
+    E cada peça deve conter o nome da sua madeira escrito dentro dela
+    E o tabuleiro deve estar vazio no lado direito
+
+  Cenário: Arrastar uma peça para uma posição válida
+    Dado que seleciono a peça "Panica"
+    Quando eu a arrasto e solto sobre uma área vazia do tabuleiro que comporta o formato da peça
+    Então a peça deve se fixar no tabuleiro naquela posição
+    E a peça deve ser removida da área de "Peças Disponíveis"
+
+  Cenário: Tentar sobrepor peças (Movimento Inválido)
+    Dado que a peça "Panica" já está no tabuleiro
+    Quando eu tento arrastar a peça "Zimbonada" para uma posição onde ela colide com a "Panica"
+    Então a peça "Zimbonada" não deve se fixar no tabuleiro
+    E a peça "Zimbonada" deve retornar para a área de "Peças Disponíveis" (ou posição original)
+
+  Cenário: Tentar colocar peça fora dos limites
+    Quando eu arrasto uma peça para fora da grade 13x5
+    Então a peça deve retornar para a sua posição de origem
+
+  Cenário: Tirar peça do tabuleiro
+    Quando eu arrasto uma peça do tabuleiro para fora da grade 13x5
+    Então a peça deve retornar para a sua posição de origem
+
+  Cenário: girar a peça antes de encaixar no tabuleiro
+    Quando o jogador selecionar a peça é possível rotacionar sua posição antes de encaixar no tabuleiro
+    Então a peça deve rotacionar para a direita ou esquerda conforme selecionado pelo jogador, o nome da madeira não deve rotacionar junto, mas sempre deve estar posicionado em um lugar preenchido pela peça 
+
+  Cenário: quando faltar apenas uma peça e ela não encaixar no tabuleiro
+   Quando o jogador só tiver uma peça disponível e essa não encaixar no tabuleiro 
+   Então apresentar dois botões um para reiniciar o jogo e outro para mostrar a solução
+  
+  Cenário: botão reiniciar jogo
+  Quando o jogador clicar no botão de reiniciar o jogo, o botão de reiniciar o jogo deve estar sempre disponível para o usuário 
+  Então todas as peças devem ser retornadas para as peças Disponíveis
+
+   Cenário: botão mostrar solução 
+   Quando o jogador clicar no botão de mostrar solução, o botão mostrar solução deve ser apresentado desde o início do jogo 
+   Então deve ser apresentado uma forma de encaixar todas as peças no tabuleiro
+
+
+   
+
+  Cenário: Vitória
+    Dado que restam apenas peças vazias na área de seleção
+    E todas as 11 peças foram encaixadas corretamente no tabuleiro
+    Quando eu encaixo a última peça
+    Então devo ver uma mensagem na tela: "Parabéns você ganhou!"

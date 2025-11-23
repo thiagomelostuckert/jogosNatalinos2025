@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quebra-Cabeça de Madeiras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>Encaixe as Madeiras</h1>
+            <div class="instructions">12 Peças • Tabuleiro 12x5 • Clique Duplo para Girar</div>
+        </div>
+        <div class="controls">
+            <button id="btn-restart" class="btn" onclick="game.restart()">Reiniciar Jogo</button>
+            <button class="btn btn-secondary" onclick="game.solve()">Apresentar solução</button>
+        </div>
+    </header>
+
+    <div class="game-container">
+        <div id="pieces-pool"></div>
+        <div id="board"></div>
+    </div>
+
+    <div id="modal-stuck" class="modal-overlay">
+        <div class="modal">
+            <h2>Ops! Sem encaixe.</h2>
+            <p>A última peça não cabe no tabuleiro.</p>
+            <div class="modal-btns">
+                <button class="btn" onclick="game.restart()">Reiniciar</button>
+                <button class="btn btn-secondary" onclick="game.startVisualSolver()">Mostrar Solução</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-victory" class="modal-overlay">
+        <div class="modal">
+            <h2 style="color: green;">Parabéns!</h2>
+            <p>Você completou o quebra-cabeça!</p>
+            <button class="btn" onclick="game.restart()">Jogar Novamente</button>
+        </div>
+    </div>
+
+<script src="app.js"></script>
+</body>
+</html>

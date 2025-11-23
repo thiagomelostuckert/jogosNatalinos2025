@@ -1,0 +1,75 @@
+Funcionalidade: Jogo de Adivinhação de Palavras "Lorota"
+  Como um jogador, eu quero participar de um jogo multijogador
+  para adivinhar significados de palavras, enganar meus amigos
+  e acumular pontos.
+
+  Contexto:
+    Dado que existe um arquivo "dicionario.csv" com "palavra" e "significado"
+
+  # 1. Credenciamento e Início
+  Cenário: Entrada de usuário na sala
+    Dado que estou na tela de credenciamento
+    Quando eu insiro o nome "Jogador1" (apenas letras e números)
+    E clico em "Entrar"
+    Então o nome "Jogador1" deve aparecer na tabela de usuários
+
+  Cenário: Admin iniciando o jogo
+    Dado que estou na tela de credenciamento
+    E os usuários "Jogador1" e "admin" estão na tabela
+    Quando eu entro no jogo com o nome "admin"
+    Então um botão "Iniciar" deve aparecer para mim
+    Quando eu clico no botão "Iniciar"
+    Então a primeira rodada do jogo deve começar para todos os usuários
+
+  # 2. Dinâmica da Rodada (Submissão)
+  Cenário: Apresentação da palavra e submissão de significados
+    Dado que o jogo começou e estamos na Rodada 1
+    E o sistema escolheu aleatoriamente a palavra "Abnóxio" do dicionário
+    Então a palavra "Abnóxio" deve ser apresentada a todos os usuários
+    Quando o "Jogador1" insere o texto "Um tipo de pássaro raro"
+    E clica em "Submeter"
+    E o "Jogador2" insere o texto "Comida estragada"
+    E clica em "Submeter"
+    E todos os usuários submeteram seus textos
+    Então o jogo deve avançar para a etapa de votação
+
+  # 3. Dinâmica da Rodada (Votação)
+  Cenário: Votação das opções
+    Dado que estamos na etapa de votação da palavra "Abnóxio"
+    E o significado correto é "Pessoa boba"
+    E "Jogador1" submeteu "Um tipo de pássaro raro"
+    E "Jogador2" submeteu "Comida estragada"
+    
+    Quando "Jogador1" visualiza as opções
+    Então ele deve ver uma lista aleatória contendo "Pessoa boba" e "Comida estragada"
+    E ele NÃO deve ver "Um tipo de pássaro raro"
+    
+    Quando "Jogador2" visualiza as opções
+    Então ele deve ver uma lista aleatória contendo "Pessoa boba" e "Um tipo de pássaro raro"
+    E ele NÃO deve ver "Comida estragada"
+    
+    Quando "Jogador1" escolhe "Pessoa boba"
+    E "Jogador2" escolhe "Um tipo de pássaro raro"
+    E todos os usuários clicam em "Revelar"
+    Então o jogo deve avançar para a etapa de pontuação
+
+  # 4. Dinâmica da Rodada (Pontuação)
+  Cenário: Cálculo da pontuação da rodada
+    Dado que "Jogador1" votou no significado correto ("Pessoa boba")
+    E "Jogador2" votou na submissão do "Jogador1" ("Um tipo de pássaro raro")
+    
+    Quando a pontuação é calculada
+    Então "Jogador1" recebe 2 pontos (por acertar a resposta)
+    E "Jogador1" recebe 1 ponto (porque "Jogador2" votou na sua resposta)
+    E "Jogador2" não recebe pontos
+    
+    E a pontuação total acumulada deve ser apresentada na tela de todos os usuários
+    E a pontuação do "Jogador1" deve ser 3
+    E a pontuação do "Jogador2" deve ser 0
+
+  # 5. Fim do Jogo
+  Cenário: Término do jogo após 10 rodadas
+    Dado que os jogadores estão na etapa de pontuação da Rodada 10
+    Quando a pontuação da Rodada 10 é calculada e exibida
+    Então o jogo deve terminar
+    E uma tela de "Fim de Jogo" deve ser exibida
