@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos Natalinos de 2025 🎄</title>
+    <style>
+        :root {
+            --christmas-red: #D42426;
+            --christmas-green: #165B33;
+            --christmas-gold: #F8B229;
+            --snow-white: #F8F8FF;
+            --text-color: #2C3E50;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--snow-white);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(135deg, var(--christmas-red) 0%, #A0181A 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem 6rem 1rem;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Game Selection Cards */
+        .games-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: -4rem;
+            padding: 0 1rem;
+            flex-wrap: wrap;
+            z-index: 10;
+            position: relative;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid var(--christmas-green);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .game-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .game-title {
+            font-size: 1.5rem;
+            color: var(--christmas-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .game-desc {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-play {
+            display: inline-block;
+            background-color: var(--christmas-red);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .btn-play:hover {
+            background-color: #B01E20;
+        }
+
+        /* Info Sections */
+        .info-section {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .info-block {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+            border-left: 4px solid var(--christmas-gold);
+        }
+
+        h2 {
+            color: var(--christmas-green);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: var(--christmas-red);
+            margin-top: 1.5rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '🎄';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 0.8rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: #eee;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        footer {
+            background-color: var(--christmas-green);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .games-container {
+                flex-direction: column;
+                align-items: center;
+                margin-top: -2rem;
+            }
+            
+            header {
+                padding-bottom: 4rem;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🎅 Jogos Natalinos de 2025</h1>
+        <p>Bem-vindo ao repositório oficial! Aqui você encontra dois desafios desenvolvidos para testar sua criatividade, habilidade de blefe e raciocínio espacial.</p>
+    </header>
+
+    <div class="games-container">
+        <!-- Card Jogo 1 -->
+        <div class="game-card">
+            <div>
+                <span class="game-icon">🧩</span>
+                <h2 class="game-title">Encaixe das Madeiras</h2>
+                <p class="game-desc">Um desafio de lógica e paciência. Encaixe todas as peças no tabuleiro sem sobreposições.</p>
+            </div>
+            <a href="./EncaixaMadeiras/index.html" class="btn-play">JOGAR AGORA</a>
+        </div>
+
+        <!-- Card Jogo 2 -->
+        <div class="game-card" style="border-top-color: var(--christmas-gold);">
+            <div>
+                <span class="game-icon">🤥</span>
+                <h2 class="game-title">Lorota</h2>
+                <p class="game-desc">Um jogo multiplayer de criatividade e engano. Invente significados e engane seus amigos.</p>
+            </div>
+            <a href="./Lorota/index.html" class="btn-play">JOGAR AGORA</a>
+        </div>
+    </div>
+
+    <div class="info-section">
+        
+        <!-- Detalhes Madeiras -->
+        <div class="info-block" id="madeiras-info">
+            <h2>🪵 Detalhes: Encaixe das Madeiras</h2>
+            <p>Baseado no clássico conceito de Pentaminós, este jogo utiliza tipos de madeiras brasileiras reais como temática.</p>
+            
+            <h3>📋 Como Jogar</h3>
+            <ul>
+                <li><strong>Objetivo:</strong> Arrastar todas as 12 peças de madeira para dentro do tabuleiro de 12x5.</li>
+                <li><strong>Regra 1:</strong> As peças não podem se sobrepor.</li>
+                <li><strong>Regra 2:</strong> Todas as peças devem estar dentro dos limites do tabuleiro.</li>
+            </ul>
+
+            <h3>🎮 Controles</h3>
+            <p><strong>Arrastar:</strong> Clique e segure para mover a peça.<br>
+            <strong>Girar:</strong> Clique duplo na peça (ou botão direito) para rotacioná-la em 90 graus.</p>
+
+            <h3>🌳 Madeiras Incluídas</h3>
+            <p style="font-style: italic; color: #555;">Panica, Angelim, Freijó, Patiduá, Pau Roxo, Cumaru, Massaranduba, Pinho, Zimbonada, Sapucaia, Pau Amarelo e Sucupira.</p>
+        </div>
+
+        <!-- Detalhes Lorota -->
+        <div class="info-block" id="lorota-info" style="border-left-color: var(--christmas-red);">
+            <h2>🤥 Detalhes: Lorota</h2>
+            <p>Um jogo multiplayer divertido inspirado em clássicos de dicionário, onde o objetivo é convencer os outros jogadores de que a sua mentira é a verdade.</p>
+
+            <h3>📋 Dinâmica do Jogo</h3>
+            <ul>
+                <li><strong>Credenciamento:</strong> Insira seu nome para entrar na sala. O Admin inicia a partida.</li>
+                <li><strong>A Rodada:</strong> O jogo apresenta uma palavra difícil (ex: "Abnóxio").</li>
+                <li><strong>A Lorota:</strong> Cada jogador inventa um significado falso, mas convincente.</li>
+                <li><strong>Votação:</strong> Todos votam no que acham ser o significado real. Você não vê sua própria mentira.</li>
+            </ul>
+
+            <h3>🏆 Pontuação</h3>
+            <p><strong>+2 Pontos:</strong> Se você acertar o significado verdadeiro.<br>
+            <strong>+1 Ponto:</strong> Para cada jogador que votar na sua mentira.</p>
+        </div>
+
+        <!-- Tecnologias -->
+        <div style="text-align: center; margin-top: 3rem;">
+            <h3>🛠 Tecnologias Utilizadas</h3>
+            <div class="tech-stack">
+                <span class="tech-tag">HTML5 Semântico</span>
+                <span class="tech-tag">CSS3 (Flexbox/Grid)</span>
+                <span class="tech-tag">JavaScript (ES6+)</span>
+                <span class="tech-tag">Algoritmo Backtracking</span>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Desenvolvido para o Natal de 2025 🎅</p>
+    </footer>
+
+</body>
+</html>
