@@ -4,23 +4,9 @@ Bem-vindo ao repositório oficial dos Jogos Natalinos de 2025! Aqui você encont
 
 🎮 Escolha o seu Jogo
 
-🧩 Encaixe das Madeiras
+[🧩 Encaixe das Madeiras - Um desafio de lógica e paciência. Encaixe todas as peças no tabuleiro.](./EncaixaMadeiras/index.html)
 
-🤥 Lorota
-
-Um desafio de lógica e paciência.
-
-Um jogo multiplayer de criatividade e engano.
-
-JOGAR AGORA
-
-JOGAR AGORA
-
-Encaixe todas as peças no tabuleiro.
-
-Invente significados e engane seus amigos.
-
-Nota: Clique nos links "JOGAR AGORA" acima para iniciar (Certifique-se de que os arquivos HTML estão na raiz ou ajuste os links).
+[🤥 Lorota - Um jogo multiplayer de criatividade e engano. Invente significados e engane seus amigos.](./Lorota/index.html)
 
 🪵 Encaixe das Madeiras
 
